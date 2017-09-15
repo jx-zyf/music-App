@@ -1,0 +1,72 @@
+[
+    {   
+        "id":1,
+        "url":"http://osbo1z8ci.bkt.clouddn.com/ReadyForIt.mp3",
+        "name":"Ready For It?",
+        "singer":"Taylor Swift - Ready For It",
+        "description":""
+    },
+    {   
+        "id":2,
+        "url":"http://osbo1z8ci.bkt.clouddn.com/star.mp3",
+        "name":"我在夜里偷看过一颗星星",
+        "singer":"齐秦 / 齐豫 - 我在夜里偷看过一颗星星",
+        "description":"(电视剧《左耳》特别插曲)"
+    },
+    {   
+        "id":3,
+        "url":"http://osbo1z8ci.bkt.clouddn.com/SHE.mp3",
+        "name":"SHE",
+        "singer":"大橋トリオ - SHE",
+        "description":""
+    },
+    {   
+        "id":4,
+        "url":"http://osbo1z8ci.bkt.clouddn.com/human.mp3",
+        "name":"普通人",
+        "singer":"成龙 / 刘涛 - 普通人",
+        "description":"(电影《英伦对决》推广曲)"
+    },
+    {   
+        "id":5,
+        "url":"http://osbo1z8ci.bkt.clouddn.com/babyuknow.mp3",
+        "name":"Baby U Know",
+        "singer":"OB03 - Baby U Know",
+        "description":""
+    },
+    {   
+        "id":6,
+        "url":"http://osbo1z8ci.bkt.clouddn.com/heroback.mp3",
+        "name":"英雄归来",
+        "singer":"PG One - 英雄归来",
+        "description":"(电影《蜘蛛侠：英雄归来》嘻哈曲)"
+    },
+    {   
+        "id":7,
+        "url":"http://osbo1z8ci.bkt.clouddn.com/youfaner.mp3",
+        "name":"谁比我有范儿 (舒服版)",
+        "singer":"VaVa - 谁比我有范儿 (舒服版)",
+        "description":"(《蜘蛛侠：英雄归来》嘻哈曲)"
+    },
+    {   
+        "id":8,
+        "url":"http://osbo1z8ci.bkt.clouddn.com/cry.mp3",
+        "name":"哭给你听",
+        "singer":"金志文 - 哭给你听",
+        "description":""
+    },
+    {   
+        "id":9,
+        "url":"http://osbo1z8ci.bkt.clouddn.com/yunchang.mp3",
+        "name":"云长",
+        "singer":"赵钶 - 云长",
+        "description":""
+    },
+    {   
+        "id":10,
+        "url":"http://osbo1z8ci.bkt.clouddn.com/winterwarm.m4a",
+        "name":"当冬夜渐暖",
+        "singer":"孙燕姿 - 当冬夜渐暖",
+        "description":"(那些年听过的孙燕姿)"
+    }
+]
