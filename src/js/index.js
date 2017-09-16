@@ -72,14 +72,14 @@
             $('.hot_search').css('display','block');
         }
     });
-
     // $('.search_cancel').on('click',function(){
     //     $('.search_cancel').animate({
     //         opacity:0
     //     },600);
     // });
 })();
-// 搜索
+
+// 发送请求核对信息
 async function search(keyword){
     var searchResult=[];
     var database;
@@ -105,12 +105,9 @@ async function search(keyword){
     // 等异步操作完成后再返回
     return searchResult;
 }
-// search('云长').then(function(res){
-//     console.log(res);
-// });
+
 // 显示搜索结果
-function showList(){
-    var keyword=$('#search').val();
+function showList(keyword){
     search(keyword).then(function(res){
         // 没有输入关键字
         if(res==undefined){
@@ -118,6 +115,9 @@ function showList(){
         }
         // 没找到结果
         if(res.length===0){
+            if($('.no_result').length!==0){
+                return;
+            }
             $('.search .musicList').append('<div class="no_result">暂无结果</div>');
         }else{
             res.forEach(function(item){
@@ -128,9 +128,15 @@ function showList(){
                     </div>
                 </a>`);
                 $('.search .musicList').append($li);
+                // $('.search .musicList a').each(function(i,v){
+                //     if($(v).html()===$li.html()){
+                //         $(v).remove();
+                //     }
+                // })
             })
         }
     })
+
     // oninput/onpropertchange value变化就触发，
     // 而onchange触发事件必须满足两个条件：
     // a）当前对象属性改变，并且是由键盘或鼠标事件激发的（脚本触发无效）
@@ -142,8 +148,24 @@ function showList(){
         }
     });
 }
+
+// 热门歌曲点击搜索
+$('.hot_search .hot_search_list').on('click',function(e){
+    if(e.target.tagName==='LI'){
+        // 热门搜索隐藏
+        $('.hot_search').css('display','none');
+        // 输入框显示点击的内容
+        $('#search').val($(e.target).text());
+        // 显示搜索结果
+        showList($(e.target).text());
+    }
+})
+// 回车搜索
 document.addEventListener('keyup',function(e){
+    var keyword=$('#search').val();
     if(e.keyCode===13){
-        showList();
+        // 将前一次结果清空
+        $('.search .musicList').empty();
+        showList(keyword);
     }
 })
