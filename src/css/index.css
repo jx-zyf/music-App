@@ -290,5 +290,29 @@ header>.homeTop>.btn_download{
     opacity: 0;
     background: #f4f4f4;
     padding:3vw;
-    font-size: 3.7vw;
+    font-size: 3vw;
+}
+.hot_search{
+    background-color: #fff;
+    padding-top:2vw;
+}
+.hot_search span{
+    margin-left:3vw;
+    font-size: 4vw;
+    font-weight: bolder;
+}
+.hot_search ul{
+    padding:2vw;
+}
+.hot_search ul li{
+    display: inline-block;
+    border:1px solid rgba(0,0,0,.6);
+    padding:1vw 2vw;
+    margin:0.5vw 0.5vw 2vw 0.5vw;
+    border-radius: 4vw;
+    font-size: 3.5vw;
+}
+.hot_search ul li:first-child{
+    color:#fc4524;
+    border-color:#fc4524;
 }

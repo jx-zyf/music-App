@@ -56,13 +56,16 @@
         $('.search_cancel').css('display','block').animate({
             opacity:1
         },600);
+        $('.hot_search').css('display','none');
     }).on('blur',function(){
         $('.search_cancel').animate({
             opacity:0
         },600);
+        $('.search_input input').val('');
         setTimeout(function(){
             $('.search_cancel').css('display','none');
         },600)
+        $('.hot_search').css('display','block');
     });
     // $('.search_cancel').on('click',function(){
     //     $('.search_cancel').animate({
