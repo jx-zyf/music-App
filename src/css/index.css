@@ -282,11 +282,12 @@ header>.homeTop>.btn_download{
     width:72vw;
     outline: none;
     font-size: 3.2vw;
+    color: rgba(0,0,0,.6);
 }
 .search .search_wrap .search_input input::-webkit-input-placeholder{
     color: rgba(0,0,0,.3);
 }
-/* 只能设置隐藏？更改其他样式无效？？ */
+/* 小叉叉 只能设置隐藏？更改其他样式无效？？ */
 /* .search .search_wrap .search_input input::-webkit-search-cancel-button{
     color: rgba(0,0,0,.3);
     border:1px solid rgba(0,0,0,.3);
@@ -298,6 +299,7 @@ header>.homeTop>.btn_download{
     display: none;
     opacity: 0;
     background: #f4f4f4;
+    color: rgba(0,0,0,.6);
     padding:3vw;
     font-size: 3vw;
 }
@@ -335,4 +337,10 @@ header>.homeTop>.btn_download{
 .search .musicList a .musicContent{
     width:100vw;
     border-bottom: 1px solid #f4f4f4;
+}
+.no_result{
+    text-align: center;
+    padding:2vw;
+    font-size: 4vw;
+    color:rgba(0,0,0,.6);
 }
