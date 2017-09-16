@@ -8,7 +8,7 @@
 
 // 选项卡切换
 (function tab(){
-    $('.header_nav').on('click',function(e){
+    $('.header_nav').on('click touchend',function(e){
         let curA=e.target;
         let index=$(curA).index();
         if(curA.tagName==='A'){
@@ -21,7 +21,7 @@
                 // 防止无限请求
                 return;
             }
-            $.get('music.json').then(function(result){
+            $.get('./music.json').then(function(result){
                 let musicList=result;
                 let $fullList=$(`<div class="fullList">
                     <p>
@@ -29,7 +29,6 @@
                         <span>查看完整榜单</span>
                     </p>
                 </div>`)
-                console.log(musicList);
                 musicList.forEach(function(item){
                     let $a=$(`<a href="javascript:;">
                         <div class="musicIndex">${item.id}</div>
@@ -49,4 +48,25 @@
             })
         }
     })
+})();
+
+// 搜索页
+(function focusShowCancel(){
+    $('.search_input input').on('focus',function(){
+        $('.search_cancel').css('display','block').animate({
+            opacity:1
+        },600);
+    }).on('blur',function(){
+        $('.search_cancel').animate({
+            opacity:0
+        },600);
+        setTimeout(function(){
+            $('.search_cancel').css('display','none');
+        },600)
+    });
+    // $('.search_cancel').on('click',function(){
+    //     $('.search_cancel').animate({
+    //         opacity:0
+    //     },600);
+    // });
 })();

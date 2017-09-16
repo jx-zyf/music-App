@@ -4,7 +4,6 @@ ul,li{list-style: none;}
 a{text-decoration: none;}
 body{
     font-size: 3vw;
-    background: #f4f4f4;
 }
 /* header */
 /* header{
@@ -55,7 +54,7 @@ header>.homeTop>.btn_download{
     display: inline-block;
     height:100%;
     line-height: 10vw;
-    font-size: 16px;
+    font-size: 4.2vw;
     color: rgba(0,0,0,.6);
 }
 .header_nav>a.active{
@@ -64,13 +63,15 @@ header>.homeTop>.btn_download{
 }
 
 /* content */
+.content>ul{
+    background: #f4f4f4;
+}
 .content>ul>li{
     display: none;
 }
 .content>ul>li.select{
     display: block;
 }
-
 .content .active .station{
     width:100vw;
     height:auto;
@@ -196,6 +197,7 @@ header>.homeTop>.btn_download{
 }
 .musicList{
     background: rgb(137, 21, 1);
+    margin-bottom:18vw;
 }
 .musicList>a{
     color:#fff;
@@ -252,4 +254,41 @@ header>.homeTop>.btn_download{
 }
 .fullList>p>img,.fullList>p>span{
     vertical-align: middle;
+}
+
+.search .search_wrap{
+    background: #f4f4f4;
+    border:1px solid transparent;
+}
+.search .search_wrap .search_input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    margin:3vw;
+    position: relative;
+}
+.search .search_wrap .search_input img{
+    width:5vw;
+    height:auto;
+    margin-left:3vw;
+}
+.search .search_wrap .search_input input{
+    border:none;
+    width:90vw;
+    padding:2vw;
+    outline: none;
+    font-size: 3.2vw;
+}
+.search .search_wrap .search_input input::-webkit-input-placeholder{
+    color: rgba(0,0,0,.3);
+}
+.search .search_wrap .search_input span{
+    position: absolute;
+    right:0;
+    display: none;
+    opacity: 0;
+    background: #f4f4f4;
+    padding:3vw;
+    font-size: 3.7vw;
 }
