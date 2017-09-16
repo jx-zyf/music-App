@@ -219,7 +219,7 @@ header>.homeTop>.btn_download{
     font-size: 3.7vw;
     /* line-height: 6vw; */
     overflow: hidden;
-    padding: 2vw 0 3vw 0;
+    padding: 2vw 0 3vw 5vw;
     border-bottom:1px solid rgba(255,255,255,.15);
 }
 .musicList>a>.musicContent>h3{
@@ -273,16 +273,25 @@ header>.homeTop>.btn_download{
     height:auto;
     margin-left:3vw;
 }
+.search .search_wrap .search_input form{
+    width:85vw;
+}
 .search .search_wrap .search_input input{
     border:none;
-    width:90vw;
     padding:2vw;
+    width:72vw;
     outline: none;
     font-size: 3.2vw;
 }
 .search .search_wrap .search_input input::-webkit-input-placeholder{
     color: rgba(0,0,0,.3);
 }
+/* 只能设置隐藏？更改其他样式无效？？ */
+/* .search .search_wrap .search_input input::-webkit-search-cancel-button{
+    color: rgba(0,0,0,.3);
+    border:1px solid rgba(0,0,0,.3);
+    border-radius: 1vw;
+} */
 .search .search_wrap .search_input span{
     position: absolute;
     right:0;
@@ -315,4 +324,15 @@ header>.homeTop>.btn_download{
 .hot_search ul li:first-child{
     color:#fc4524;
     border-color:#fc4524;
+}
+.search .musicList{
+    margin-bottom:0;
+    background-color: #fff;
+}
+.search .musicList a{
+    color:#000;
+}
+.search .musicList a .musicContent{
+    width:100vw;
+    border-bottom: 1px solid #f4f4f4;
 }

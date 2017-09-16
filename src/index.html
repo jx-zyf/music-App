@@ -109,26 +109,36 @@
                     <div class="search_input">
                         <img src="./images/search.png" alt="">
                         <form action="">
-                            <input type="search" placeholder="搜索歌曲、歌单、专辑">
+                            <!-- 
+                                如果form表单有且仅有一个input，按下回车表单会默认提交然后刷新页面
+                                解决办法：
+                                1.去掉form
+                                2.如果必须要有form
+                                (1).加一个隐藏的文本框
+                                (2).阻止表单提交 添加onsubmit事件 返回false
+                             -->
+                            <input id="hiddenText" type="text" style="display:none" />
+                            <input id="search" type="search" placeholder="搜索歌曲、歌单、专辑">
                         </form>
                         <span class="search_cancel">取消</span>
                     </div>
-                    <div class="hot_search">
-                        <span>热门搜索</span>
-                        <ul class="hot_search_list">
-                            <li data-id="1">Ready For It?</li>
-                            <li data-id="2">我在夜里偷看过一颗星星</li>
-                            <li data-id="3">SHE</li>
-                            <li data-id="4">普通人</li>
-                            <li data-id="5">Baby U Know</li>
-                            <li data-id="6">英雄归来</li>
-                            <li data-id="9">云长</li>
-                            <li data-id="7">谁比我有范儿 (舒服版)</li>
-                            <li data-id="8">哭给你听</li>
-                            <li data-id="10">当冬夜渐暖</li>
-                        </ul>
-                    </div>
                 </div>
+                <div class="hot_search">
+                    <span>热门搜索</span>
+                    <ul class="hot_search_list">
+                        <li data-id="1">Ready For It?</li>
+                        <li data-id="2">我在夜里偷看过一颗星星</li>
+                        <li data-id="3">SHE</li>
+                        <li data-id="4">普通人</li>
+                        <li data-id="5">Baby U Know</li>
+                        <li data-id="6">英雄归来</li>
+                        <li data-id="9">云长</li>
+                        <li data-id="7">谁比我有范儿 (舒服版)</li>
+                        <li data-id="8">哭给你听</li>
+                        <li data-id="10">当冬夜渐暖</li>
+                    </ul>
+                </div>
+                <div class="musicList"></div>
             </li>
         </ul>
     </div>
