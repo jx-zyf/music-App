@@ -21,7 +21,7 @@
                 // 防止无限请求
                 return;
             }
-            $.get('/src/music.json').then(function(result){
+            $.get('music.json').then(function(result){
                 let musicList=result;
                 let $fullList=$(`<div class="fullList">
                     <p>
