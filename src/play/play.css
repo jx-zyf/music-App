@@ -1,0 +1,19 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+.play_page{
+    width:100vw;
+    min-height:100vh;
+}
+.play_header{
+    width:100vw;
+    padding:4vw;
+}
+.song_img{
+    display: block;
+    width:20vw;
+    height:20vw;
+}

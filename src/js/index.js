@@ -30,7 +30,7 @@
                     </p>
                 </div>`)
                 musicList.forEach(function(item){
-                    let $a=$(`<a href="javascript:;">
+                    let $a=$(`<a href="./play/play.html?id=${item.id}">
                         <div class="musicIndex">${item.id}</div>
                         <div class="musicContent">
                             <h3>${item.name}</h3>
@@ -121,7 +121,7 @@ function showList(keyword){
             $('.search .musicList').append('<div class="no_result">暂无结果</div>');
         }else{
             res.forEach(function(item){
-                let $li=$(`<a href="javascript:;">
+                let $li=$(`<a href="./play/play.html?id=${item.id}">
                     <div class="musicContent">
                         <h3>${item.name}</h3>
                         <p>${item.singer}<span>${item.description}</span></p>
