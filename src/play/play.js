@@ -120,13 +120,13 @@ function doublee(num){
 	return num>=10?num:'0'+num
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    var $audio=$('.audio');
-    function audioAutoPlay() {
-        $audio[0].play();
-        document.addEventListener("WeixinJSBridgeReady", function () {
-            $audio[0].play();
-        }, false);
-    }
-    audioAutoPlay();
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//     var $audio=$('.audio');
+//     function audioAutoPlay() {
+//         $audio[0].play();
+//         document.addEventListener("WeixinJSBridgeReady", function () {
+//             $audio[0].play();
+//         }, false);
+//     }
+//     audioAutoPlay();
+// });
