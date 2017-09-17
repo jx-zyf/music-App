@@ -49,7 +49,7 @@ header>.homeTop>.btn_download{
     display: flex;
     text-align: center;
 }
-.header_nav>a{
+.header_nav>span{
     flex-grow: 1;
     display: inline-block;
     height:100%;
@@ -57,7 +57,7 @@ header>.homeTop>.btn_download{
     font-size: 4.2vw;
     color: rgba(0,0,0,.6);
 }
-.header_nav>a.active{
+.header_nav>span.active{
     color:#31c27c;
     border-bottom: 2px solid #31c27c;
 }
