@@ -1,13 +1,13 @@
-// 轮播图
-function slideShow(){
-    let slide=$('.slide');
-    let slideImgs=$('.slideImg img');
-    let slideLis=$('.slideImg ul li');
-    new ChangeImg(slide,slideLis,slideImgs,2500);
-};
+$(function(){
+    // 轮播图
+    (function slideShow(){
+        let slide=$('.slide');
+        let slideImgs=$('.slideImg img');
+        let slideLis=$('.slideImg ul li');
+        new ChangeImg(slide,slideLis,slideImgs,2500);
+    })();
 
-// 选项卡切换
-function tab(){
+    // 选项卡切换
     $('.header_nav>span').on('click',function(e){
         let curSpan=e.target;
         let index=$(curSpan).index();
@@ -47,11 +47,8 @@ function tab(){
             })
         }
     })
-}
 
-// 搜索页
-// 搜索框逻辑
-function focusShowCancel(){
+    // 搜索框逻辑
     $('#search').on('focus',function(){
         // 获得焦点时取消按钮出现，热门搜索隐藏
         $('.search_cancel').css('display','block').animate({
@@ -76,7 +73,28 @@ function focusShowCancel(){
     //         opacity:0
     //     },600);
     // });
-};
+
+    // 热门歌曲点击搜索
+    $('.hot_search .hot_search_list').on('click',function(e){
+        if(e.target.tagName==='LI'){
+            // 热门搜索隐藏
+            $('.hot_search').css('display','none');
+            // 输入框显示点击的内容
+            $('#search').val($(e.target).text());
+            // 显示搜索结果
+            showList($(e.target).text());
+        }
+    })
+    // 回车搜索
+    document.addEventListener('keyup',function(e){
+        var keyword=$('#search').val();
+        if(e.keyCode===13){
+            // 将前一次结果清空
+            $('.search .musicList').empty();
+            showList(keyword);
+        }
+    })
+});
 
 // 发送请求核对信息
 async function search(keyword){
@@ -104,7 +122,6 @@ async function search(keyword){
     // 等异步操作完成后再返回
     return searchResult;
 }
-
 // 显示搜索结果
 function showList(keyword){
     search(keyword).then(function(res){
@@ -147,30 +164,3 @@ function showList(keyword){
         }
     });
 }
-
-
-$(function(){
-    slideShow();
-    tab();
-    focusShowCancel();
-    // 热门歌曲点击搜索
-    $('.hot_search .hot_search_list').on('click',function(e){
-        if(e.target.tagName==='LI'){
-            // 热门搜索隐藏
-            $('.hot_search').css('display','none');
-            // 输入框显示点击的内容
-            $('#search').val($(e.target).text());
-            // 显示搜索结果
-            showList($(e.target).text());
-        }
-    })
-    // 回车搜索
-    document.addEventListener('keyup',function(e){
-        var keyword=$('#search').val();
-        if(e.keyCode===13){
-            // 将前一次结果清空
-            $('.search .musicList').empty();
-            showList(keyword);
-        }
-    })
-});
