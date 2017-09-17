@@ -17,11 +17,11 @@
         }
         if(index===1){
             // 排行榜请求
-            if($('.content>ul>li').eq(index).attr('data-downloaded')==='yes'){
-                // 防止无限请求
-                return;
-            }
             $.get('./music.json').then(function(result){
+                if($('.content>ul>li').eq(index).attr('data-downloaded')==='yes'){
+                    // 防止无限请求
+                    return;
+                }
                 let musicList=result;
                 let $fullList=$(`<div class="fullList">
                     <p>

@@ -12,15 +12,27 @@
     <div class="play_page">
         <div class="play_header">
             <span class="song_img"></span>
-            <div class="song_info"></div>
-            <a href="javascript:;" class="icon_play"></a>
+            <div class="song_info">
+                <h2></h2>
+                <span></span>
+            </div>
+            <a href="javascript:;" class="icon_play" data-play="true"></a>
         </div>
-        <div class="lyric"></div>
+        <div class="lyric_wrap">
+            <div class="lyric"></div>
+        </div>
         <div class="control">
             <div class="m_like"></div>
-            <div class="progress"></div>
-            <div class="btns"></div>
+            <div class="progress">
+                <span class="time_now"></span>
+                <div class="progress_play">
+                    <div class="now_progress"></div>
+                </div>
+                <span class="time_end"></span>
+            </div>
+            <a class="btns">免费下载这首歌</a>
         </div>
+		<audio src="" class="audio"></audio>
     </div>
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="./play.js"></script>

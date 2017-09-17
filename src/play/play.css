@@ -10,10 +10,118 @@
 }
 .play_header{
     width:100vw;
-    padding:4vw;
+    padding:5vw 3vw;
+    background: rgba(0,0,0,.1);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+.song_info{
+    color:#fff;
+    margin-left:2vw;
+}
+.song_info>h2{
+    font-size: 4.5vw;
+    margin-bottom:1vw;
+}
+.song_info>span{
+    font-size: 3.2vw;
 }
 .song_img{
     display: block;
-    width:20vw;
-    height:20vw;
+    width:15vw;
+    height:15vw;
+}
+.icon_play{
+    width:12vw;
+    height:12vw;
+    background-image: url('../images/play_sprite.png');
+    background-position:  center 69.5%;
+    background-repeat: no-repeat;
+    background-size: 100% 250%;
+    position: absolute;
+    right:5vw;
+}
+.lyric_wrap{
+    width:100vw;
+    height:80vw;
+    overflow: hidden;
+    margin:20vw 0 15vw 0;
+}
+.lyric{
+    text-align: center;
+    color:rgba(255,255,255,.6);
+    transition: all 0.4s linear;
+    /* overflow: hidden; */
+}
+.lyric p{
+    margin:6vw 0;
+}
+.lyric p.curlyric{
+    color:#31c27c;
+}
+.control{
+    position: relative;
+}
+.m_like{
+    width:7vw;
+    height:7vw;
+    position: absolute;
+    right:4vw;
+    background-image: url('../images/sprite_play.png');
+    background-position: top left;
+    background-size: 150% 1500%;
+    background-repeat: no-repeat;
+}
+.progress{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top:13vw;
+}
+.progress span{
+    display: block;
+    width:8vw;
+    height: 5vw;
+    color:#808080;
+    font-size: 3vw;
+    text-align: center;
+}
+.progress_play{
+    width:70vw;
+    height:1px;
+    background-color: rgba(255,255,255,.2);
+}
+.now_progress{
+    width:0;
+    height:1px;
+    background-color: #31c27c;
+}
+.btns{
+    display: block;
+    margin:auto;
+    width:75vw;
+    color:#fff;
+    margin-top:4vw;
+    font-size: 4.5vw;
+    text-align: center;
+    padding:2.5vw 0;
+    border:1px solid transparent;
+    border-radius: 6vw;
+    background-color: #31c27c;;
+    position: relative;
+}
+.btns:before{
+    content: '';
+    position: absolute;
+    left:1vw;
+    top:50%;
+    transform: translateY(-50%);
+    width:8vw;
+    height:8vw;
+    background-image: url('../images/sprite_play.png');
+    background-position: left 95%;
+    background-size: 120% 1000%;
+    background-repeat: no-repeat;
 }
