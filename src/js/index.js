@@ -1,11 +1,7 @@
 $(function(){
     // 轮播图
-    (function slideShow(){
-        let slide=$('.slide');
-        let slideImgs=$('.slideImg img');
-        let slideLis=$('.slideImg ul li');
-        new ChangeImg(slide,slideLis,slideImgs,2500);
-    })();
+    alert('轮播..');
+    slideShow();
 
     // 选项卡切换
     $('.header_nav').on('click','span',function(e){
@@ -99,6 +95,13 @@ $(function(){
     })
 });
 
+// 轮播图
+function slideShow(){
+    let slide=$('.slide');
+    let slideImgs=$('.slideImg img');
+    let slideLis=$('.slideImg ul li');
+    new ChangeImg(slide,slideLis,slideImgs,2500);
+};
 // 发送请求核对信息
 async function search(keyword){
     var searchResult=[];
