@@ -32,7 +32,6 @@ function play(url){
     let mPlay=$('.icon_play');
     let endminute,endsecond,endTime;
     $audio.attr('src',url);
-    $audio[0].play();
     $audio.on('canplay',function(){
         $audio[0].play();
         // 计算歌曲总时长
@@ -120,3 +119,14 @@ function getlyric(lyric){
 function doublee(num){
 	return num>=10?num:'0'+num
 }
+
+document.addEventListener('load', function () {
+    var $audio=$('.audio');
+    function audioAutoPlay() {
+        $audio[0].play();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            $audio[0].play();
+        }, false);
+    }
+    audioAutoPlay();
+});
