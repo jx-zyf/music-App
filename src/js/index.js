@@ -1,11 +1,11 @@
 $(function(){
     // 轮播图
-    (function slideShow(){
-        let slide=$('.slide');
-        let slideImgs=$('.slideImg img');
-        let slideLis=$('.slideImg ul li');
-        new ChangeImg(slide,slideLis,slideImgs,2500);
-    })();
+    // (function slideShow(){
+    //     let slide=$('.slide');
+    //     let slideImgs=$('.slideImg img');
+    //     let slideLis=$('.slideImg ul li');
+    //     new ChangeImg(slide,slideLis,slideImgs,2500);
+    // })();
 
     // 选项卡切换
     $('.header_nav').on('click','span',function(e){
