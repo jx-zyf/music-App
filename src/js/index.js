@@ -8,11 +8,11 @@ $(function(){
     })();
 
     // 选项卡切换
-    $('.header_nav').on('click touchend','span',function(e){
+    $('.header_nav').on('click','span',function(e){
         let curSpan=e.target;
         let index=$(curSpan).index();
         $(curSpan).addClass('active').siblings().removeClass('active');
-        $($('.content>ul>li')[index]).addClass('select').siblings().removeClass('select');
+        $($('.content>ul>li:eq('+index+')')).addClass('select').siblings().removeClass('select');
 
         if(index===1){
             // 排行榜请求
