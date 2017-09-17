@@ -9,14 +9,17 @@ $(function(){
 
     // 选项卡切换
     $('.header_nav').on('click','span',function(e){
+        alert('click执行了')
         let curSpan=e.target;
         let index=$(curSpan).index();
         $(curSpan).addClass('active').siblings().removeClass('active');
         $('.content>ul>li').eq(index).addClass('select').siblings().removeClass('select');
 
         if(index===1){
+            alert('执行了');
             // 排行榜请求
             $.get('./music.json').then(function(result){
+                alert('ajax请求进来了');
                 if($('.content>ul>li').eq(index).attr('data-downloaded')==='yes'){
                     // 防止无限请求
                     return;
