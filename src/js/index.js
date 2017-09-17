@@ -8,7 +8,7 @@ $(function(){
     })();
 
     // 选项卡切换
-    $('.header_nav>span').on('click',function(e){
+    $('.header_nav').on('click touchend','span',function(e){
         let curSpan=e.target;
         let index=$(curSpan).index();
         $(curSpan).addClass('active').siblings().removeClass('active');
