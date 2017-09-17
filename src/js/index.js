@@ -1,7 +1,7 @@
 $(function(){
     // 轮播图
     alert('轮播..');
-    slideShow();
+    // slideShow();
 
     // 选项卡切换
     $('.header_nav').on('click','span',function(e){
