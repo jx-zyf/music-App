@@ -8,13 +8,13 @@
 
 // 选项卡切换
 (function tab(){
-    $('.header_nav').on('click touchend',function(e){
+    $('.header_nav>a').on('click touchend',function(e){
         let curA=e.target;
         let index=$(curA).index();
-        if(curA.tagName==='A'){
+        // if(curA.tagName==='A'){
             $(curA).addClass('active').siblings().removeClass('active');
             $($('.content>ul>li')[index]).addClass('select').siblings().removeClass('select');
-        }
+        // }
         if(index===1){
             // 排行榜请求
             $.get('./music.json').then(function(result){
@@ -47,7 +47,6 @@
                 console.log('error:'+err);
             })
         }
-        return false;
     })
 })();
 
