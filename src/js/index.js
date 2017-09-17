@@ -98,7 +98,7 @@ function slideShow(){
     let slideLis=$('.slideImg ul li');
     new ChangeImg(slide,slideLis,slideImgs,2500);
 };
-// 发送请求核对信息
+// 发送请求核对信息并展示搜索结果
 function search(keyword){
     var searchResult=[];
     var database;
@@ -142,9 +142,10 @@ function search(keyword){
     },function(err){
         console.log('error:'+err);
     });
-    // 等异步操作完成后再返回
-    // return searchResult;
 }
+
+// 一个巨坑：安卓浏览器不支持async await
+
 // 显示搜索结果
 // function showList(keyword){
 //     search(keyword).then(function(res){
