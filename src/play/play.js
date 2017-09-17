@@ -32,6 +32,7 @@ function play(url){
     let mPlay=$('.icon_play');
     let endminute,endsecond,endTime;
     $audio.attr('src',url);
+    $audio[0].play();
     $audio.on('canplay',function(){
         $audio[0].play();
         // 计算歌曲总时长

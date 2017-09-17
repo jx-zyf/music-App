@@ -9,9 +9,9 @@
 // 选项卡切换
 (function tab(){
     $('.header_nav>span').on('click',function(e){
-        let curA=e.target;
-        let index=$(curA).index();
-        $(curA).addClass('active').siblings().removeClass('active');
+        let curSpan=e.target;
+        let index=$(curSpan).index();
+        $(curSpan).addClass('active').siblings().removeClass('active');
         $($('.content>ul>li')[index]).addClass('select').siblings().removeClass('select');
 
         if(index===1){
