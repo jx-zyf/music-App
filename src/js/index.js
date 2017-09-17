@@ -1,18 +1,18 @@
 $(function(){
     // 轮播图
-    // (function slideShow(){
-    //     let slide=$('.slide');
-    //     let slideImgs=$('.slideImg img');
-    //     let slideLis=$('.slideImg ul li');
-    //     new ChangeImg(slide,slideLis,slideImgs,2500);
-    // })();
+    (function slideShow(){
+        let slide=$('.slide');
+        let slideImgs=$('.slideImg img');
+        let slideLis=$('.slideImg ul li');
+        new ChangeImg(slide,slideLis,slideImgs,2500);
+    })();
 
     // 选项卡切换
     $('.header_nav').on('click','span',function(e){
         let curSpan=e.target;
         let index=$(curSpan).index();
         $(curSpan).addClass('active').siblings().removeClass('active');
-        $($('.content>ul>li:eq('+index+')')).addClass('select').siblings().removeClass('select');
+        $('.content>ul>li').eq(index).addClass('select').siblings().removeClass('select');
 
         if(index===1){
             // 排行榜请求
