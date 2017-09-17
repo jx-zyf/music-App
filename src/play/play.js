@@ -40,6 +40,11 @@ function play(url){
         endTime=`${doublee(endminute)}:${doublee(endsecond)}`;
         $('.time_end').text(endTime);
     });
+    // 当媒体播放停止时，会触发ended事件
+    $audio.on('ended',function(){
+        mPlay.css('background-position','center top');
+        mPlay.attr('data-play','false');
+    });
     mPlay.on('click',function(){
         if(mPlay.attr('data-play')==='true'){
             // 暂停
@@ -77,6 +82,16 @@ function play(url){
             $('.lyric').css('transform',`translateY(-${speed}px)`);
         }
     },500)
+    // 收藏
+    $('.m_like').on('click',function(){
+        if($(this).attr('data-like')==='true'){
+            $(this).css('background-position','left 9%');
+            $(this).attr('data-like','false');
+        }else{
+            $(this).css('background-position','left top');
+            $(this).attr('data-like','true');
+        }
+    })
 }
 
 function getlyric(lyric){

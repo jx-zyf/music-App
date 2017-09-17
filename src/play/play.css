@@ -57,12 +57,14 @@
 }
 .lyric p{
     margin:6vw 0;
+    font-size: 3.7vw;
 }
 .lyric p.curlyric{
     color:#31c27c;
 }
 .control{
     position: relative;
+    padding-bottom:4vw;
 }
 .m_like{
     width:7vw;
@@ -70,7 +72,7 @@
     position: absolute;
     right:4vw;
     background-image: url('../images/sprite_play.png');
-    background-position: top left;
+    background-position: left top;
     background-size: 150% 1500%;
     background-repeat: no-repeat;
 }
