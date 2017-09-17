@@ -120,7 +120,7 @@ function doublee(num){
 	return num>=10?num:'0'+num
 }
 
-document.addEventListener('load', function () {
+document.addEventListener('DOMContentLoaded', function () {
     var $audio=$('.audio');
     function audioAutoPlay() {
         $audio[0].play();
