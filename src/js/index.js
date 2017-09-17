@@ -8,7 +8,7 @@
 
 // 选项卡切换
 (function tab(){
-    $('.header_nav>span').on('click touchend',function(e){
+    $('.header_nav>span').on('click',function(e){
         let curA=e.target;
         let index=$(curA).index();
         $(curA).addClass('active').siblings().removeClass('active');
