@@ -1,4 +1,4 @@
-// $(function(){
+$(function(){
     // 轮播图
     alert('轮播..');
     slideShow();
@@ -93,7 +93,7 @@
             showList(keyword);
         }
     })
-// });
+});
 
 // 轮播图
 function slideShow(){
