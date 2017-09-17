@@ -1,21 +1,17 @@
 $(function(){
     // 轮播图
-    alert('轮播..');
-    // slideShow();
+    slideShow();
 
     // 选项卡切换
     $('.header_nav').on('click','span',function(e){
-        alert('click执行了')
         let curSpan=e.target;
         let index=$(curSpan).index();
         $(curSpan).addClass('active').siblings().removeClass('active');
         $('.content>ul>li').eq(index).addClass('select').siblings().removeClass('select');
 
         if(index===1){
-            alert('执行了');
             // 排行榜请求
             $.get('./music.json').then(function(result){
-                alert('ajax请求进来了');
                 if($('.content>ul>li').eq(index).attr('data-downloaded')==='yes'){
                     // 防止无限请求
                     return;
@@ -81,7 +77,7 @@ $(function(){
             // 输入框显示点击的内容
             $('#search').val($(e.target).text());
             // 显示搜索结果
-            showList($(e.target).text());
+            search($(e.target).text());
         }
     })
     // 回车搜索
@@ -90,27 +86,27 @@ $(function(){
         if(e.keyCode===13){
             // 将前一次结果清空
             $('.search .musicList').empty();
-            showList(keyword);
+            search(keyword);
         }
     })
 });
 
 // 轮播图
-// function slideShow(){
-//     let slide=$('.slide');
-//     let slideImgs=$('.slideImg img');
-//     let slideLis=$('.slideImg ul li');
-//     new ChangeImg(slide,slideLis,slideImgs,2500);
-// };
+function slideShow(){
+    let slide=$('.slide');
+    let slideImgs=$('.slideImg img');
+    let slideLis=$('.slideImg ul li');
+    new ChangeImg(slide,slideLis,slideImgs,2500);
+};
 // 发送请求核对信息
-async function search(keyword){
+function search(keyword){
     var searchResult=[];
     var database;
     // 异步操作
     if(keyword=='') return;
-    await $.get('./music.json').then(function(result){
+    $.get('./music.json').then(function(result){
         database=result;
-        var search_result=database.filter(function(item){
+        searchResult=database.filter(function(item){
             return item.name.indexOf(keyword)>=0
                     ||item.name.indexOf(keyword.toLowerCase())>=0
                     ||item.name.indexOf(keyword.toUpperCase())>=0
@@ -121,28 +117,13 @@ async function search(keyword){
                     ||item.description.indexOf(keyword.toLowerCase())>=0
                     ||item.description.indexOf(keyword.toUpperCase())>=0;
         })
-        searchResult=search_result.slice(0);
-    },function(err){
-        console.log('error:'+err);
-    });
-    // 等异步操作完成后再返回
-    return searchResult;
-}
-// 显示搜索结果
-function showList(keyword){
-    search(keyword).then(function(res){
-        // 没有输入关键字
-        if(res==undefined){
-            return;
-        }
-        // 没找到结果
-        if(res.length===0){
+        if(searchResult.length===0){
             if($('.no_result').length!==0){
                 return;
             }
             $('.search .musicList').append('<div class="no_result">暂无结果</div>');
         }else{
-            res.forEach(function(item){
+            searchResult.forEach(function(item){
                 let $li=$(`<a href="./play/play.html?id=${item.id}">
                     <div class="musicContent">
                         <h3>${item.name}</h3>
@@ -150,23 +131,59 @@ function showList(keyword){
                     </div>
                 </a>`);
                 $('.search .musicList').append($li);
-                // $('.search .musicList a').each(function(i,v){
-                //     if($(v).html()===$li.html()){
-                //         $(v).remove();
-                //     }
-                // })
             })
         }
-    })
-
-    // oninput/onpropertchange value变化就触发，
-    // 而onchange触发事件必须满足两个条件：
-    // a）当前对象属性改变，并且是由键盘或鼠标事件激发的（脚本触发无效）
-    // b）当前对象失去焦点(onblur)
-    $('#search').on('change input propertychange',function(){
-        if($('#search').val()==''){
-            // 清空搜索结果
-            $('.search .musicList').empty();
-        }
+        $('#search').on('change input propertychange',function(){
+            if($('#search').val()==''){
+                // 清空搜索结果
+                $('.search .musicList').empty();
+            }
+        });
+    },function(err){
+        console.log('error:'+err);
     });
+    // 等异步操作完成后再返回
+    // return searchResult;
 }
+// 显示搜索结果
+// function showList(keyword){
+//     search(keyword).then(function(res){
+//         // 没有输入关键字
+//         if(res==undefined){
+//             return;
+//         }
+//         // 没找到结果
+//         if(res.length===0){
+//             if($('.no_result').length!==0){
+//                 return;
+//             }
+//             $('.search .musicList').append('<div class="no_result">暂无结果</div>');
+//         }else{
+//             res.forEach(function(item){
+//                 let $li=$(`<a href="./play/play.html?id=${item.id}">
+//                     <div class="musicContent">
+//                         <h3>${item.name}</h3>
+//                         <p>${item.singer}<span>${item.description}</span></p>
+//                     </div>
+//                 </a>`);
+//                 $('.search .musicList').append($li);
+//                 // $('.search .musicList a').each(function(i,v){
+//                 //     if($(v).html()===$li.html()){
+//                 //         $(v).remove();
+//                 //     }
+//                 // })
+//             })
+//         }
+//     })
+
+//     // oninput/onpropertchange value变化就触发，
+//     // 而onchange触发事件必须满足两个条件：
+//     // a）当前对象属性改变，并且是由键盘或鼠标事件激发的（脚本触发无效）
+//     // b）当前对象失去焦点(onblur)
+//     $('#search').on('change input propertychange',function(){
+//         if($('#search').val()==''){
+//             // 清空搜索结果
+//             $('.search .musicList').empty();
+//         }
+//     });
+// }
