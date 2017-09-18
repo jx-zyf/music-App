@@ -26,7 +26,7 @@ ChangeImg.prototype={
         clearInterval(this.handle);
     },
     touch:function(){
-        this.wrap.ontouchmove=function(e){
+        this.imgs.ontouchmove=function(e){
             // 如果有多个地方滑动，我们就不发生这个事件
             if(e.targetTouches.length > 1){
                 return;

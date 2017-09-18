@@ -118,7 +118,7 @@ function slideShow(){
     let slide=$('.slide');
     let slideImgs=$('.slideImg img');
     let slideLis=$('.slideImg ul li');
-    new ChangeImg(slide,slideLis,slideImgs,2500);
+    new ChangeImg(slide,slideLis,slideImgs,3000);
 };
 // 发送请求核对信息并展示搜索结果
 function search(keyword){
