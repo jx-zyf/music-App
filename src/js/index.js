@@ -1,4 +1,26 @@
 $(function(){
+    // 封面
+    // 消失时间随机
+    let time=Math.floor(Math.random()*1600);
+    setTimeout(function(){
+        $('.cover').css('display','none');
+    },time);
+
+    // 点击logo跳转到官网
+    $('.music_logo').on('click',function(){
+        window.open('https://y.qq.com');
+    });
+
+    // 由于歌曲有限，首页电台、热门歌单指定跳转到一首音乐
+    $('.music_play').on('click',function(e){
+        if($(e.target).parent().attr('data-mid')){
+            let m_id=$(this).attr('data-mid');
+            window.location.href=`./play/play.html?id=${m_id}`;
+        }else{
+            return;
+        }
+    });
+
     // 轮播图
     slideShow();
 

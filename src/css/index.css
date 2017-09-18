@@ -5,6 +5,15 @@ a{text-decoration: none;}
 body{
     font-size: 3vw;
 }
+.cover{
+    position: fixed;
+    width:100vw;
+    height:100vh;
+    background-image: url('../images/cover.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 9999;
+}
 /* header */
 /* header{
     position: fixed;

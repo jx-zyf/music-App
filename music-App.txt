@@ -1,0 +1,17 @@
+input type=search ::-webkit-search-cancel-button 小叉叉样式
+type=search 外面加一层form才有效，回车时会提交表单，需要禁止提交：
+解决方法：
+1.在form中加一个type为hiddenText的input框，因为表单未填完所以不会提交(我认为)
+2.给form添加onsubmit事件，return false;
+
+input placeholder ::-webkit-input-placeholder 伪元素
+
+vw vh vim vmax 等单位
+
+flex布局
+
+anywhere 随时随地生成服务器 可以发送ajax请求 
+github pages本身就是服务器，代码上传后就可以执行
+
+异步
+
