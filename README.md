@@ -4,7 +4,7 @@
 
 效果图
 <br />
-![预览图](https://github.com/jx-zyf/music-App/blob/master/result/result.gif)
+![](https://github.com/jx-zyf/music-App/blob/master/result/result.gif)
 
 pc端请到调试窗口(F12)查看，移动端直接预览
 
