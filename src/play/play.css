@@ -99,6 +99,16 @@
     width:0;
     height:1px;
     background-color: #31c27c;
+    position: relative;
+}
+.now_progress:after{
+    content: '';
+    position: absolute;
+    right:0;
+    display: block;
+    border:2px solid #31c27c;
+    border-radius: 2px;
+    transform: translateY(-1px);
 }
 .btns{
     display: block;

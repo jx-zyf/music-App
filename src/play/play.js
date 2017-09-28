@@ -84,6 +84,7 @@ function play(url){
         let targetTime=Math.round(fullTime*pro_play);
         mPlay.css('background-position','center 69.5%')
         mPlay.attr('data-play','true');
+        $audio[0].play();
         // 当前播放时间为点击的目标时间
         $audio[0].currentTime=targetTime;
         curTime=`${doublee(Math.floor(targetTime/60))}:${doublee(targetTime%60)}`;
