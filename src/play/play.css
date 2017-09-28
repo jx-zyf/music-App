@@ -37,7 +37,7 @@
     width:12vw;
     height:12vw;
     background-image: url('../images/play_sprite.png');
-    background-position:  center 69.5%;
+    background-position:  center top;
     background-repeat: no-repeat;
     background-size: 100% 250%;
     position: absolute;

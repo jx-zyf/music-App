@@ -36,7 +36,7 @@ function play(url){
     let curTime;
     $audio.attr('src',url);
     $audio.on('canplay',function(){
-        $audio[0].play();
+        // $audio[0].play();
         // 计算歌曲总时长
         endminute=Math.floor(this.duration/60);
         endsecond=Math.floor(this.duration%60);
